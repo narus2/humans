@@ -9,5 +9,4 @@ export class MongooseConfigService implements MongooseOptionsFactory{
           uri: process.env.DB_uri
         };
       }
-
 }
