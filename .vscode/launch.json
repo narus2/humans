@@ -1,0 +1,16 @@
+{
+    "configurations": [
+    {
+        "command": "npm start",
+        "name": "Run npm start",
+        "request": "launch",
+        "type": "node-terminal"
+    },
+        {
+            "type": "pwa-chrome",
+            "name": "ws://127.0.0.1:9229/785d9d8b-ac24-4f38-ac53-e5703258570c",
+            "request": "launch",
+            "url": "ws://127.0.0.1:9229/785d9d8b-ac24-4f38-ac53-e5703258570c"
+        }
+    ]
+}
