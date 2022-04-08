@@ -8,6 +8,7 @@ export class PeopleController {
     
     constructor(private readonly peopleService: PeopleService) {
     }
+
     @Get()
     getAll():Promise<People[]>{
         return  this.peopleService.getAll()

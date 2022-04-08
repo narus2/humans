@@ -9,11 +9,9 @@ import { ConfigModule, ConfigService  } from '@nestjs/config';
 
 import { MongooseConfigService } from './config/mongoose-config-service';
 import { EventEmitterModule } from '@nestjs/event-emitter';
-import { MailCreatedListener } from './people/listeners/mail.listerner';
-import { MailModule } from './mail/mail.module';
 
 import { MailerModule } from '@nestjs-modules/mailer';
-import { getMailConfig } from './config/mail-config';
+import { HandlebarsAdapter } from '@nestjs-modules/mailer/dist/adapters/handlebars.adapter';
 
 
 @Module({
@@ -21,14 +19,30 @@ import { getMailConfig } from './config/mail-config';
     ConfigModule.forRoot(),
     MongooseModule.forRootAsync({useClass: MongooseConfigService}),
     EventEmitterModule.forRoot(),
-    MailModule,
-    MailerModule.forRootAsync({
-      imports: [ConfigModule],
-      inject: [ConfigService],
-      useFactory: getMailConfig,
-    }),
+    
+    MailerModule.forRoot({
+      transport: {
+        host: process.env.EMAIL_HOST,
+        port: process.env.EMAIL_PORT,
+        secure: false, // true for 465, false for other ports
+        auth: {
+          user: process.env.EMAIL_ID, // generated ethereal user
+          pass: process.env.EMAIL_PASS // generated ethereal password
+        },
+      },
+      defaults: {
+        from: '"nest-modules" <user@outlook.com>', // outgoing email ID
+      },
+      template: {
+        dir: process.cwd() + '/src/mail/templates/',
+        adapter: new HandlebarsAdapter(), // or new PugAdapter()
+        options: {
+          strict: true,
+        },
+      },
+    })
   ],
   controllers: [AppController],
-  providers: [AppService, MailCreatedListener]
+  providers: [AppService]
 })
 export class AppModule {}

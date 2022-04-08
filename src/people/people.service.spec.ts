@@ -30,13 +30,6 @@ describe('PeopleService', () => {
       ],
   }).compile();
 
-
-  // beforeEach(async () => {
-  //   const module: TestingModule = await Test.createTestingModule({
-  //     providers: [PeopleService],
-  //     imports: [CreatePeopleDto, People]
-  //   }).compile();
-
     service = module.get<PeopleService>(PeopleService);
     
     model = module.get<Model<People>>(getModelToken('People'));
