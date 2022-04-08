@@ -62,6 +62,13 @@ export class People {
   
   @Prop()
   general_work_permit_required: boolean
+  
+  @Prop()
+  image_pasport: string
+  
+  @Prop()
+  image_registration: string
+
 }
 
 export const PeopleSchema = SchemaFactory.createForClass(People);
