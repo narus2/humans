@@ -12,5 +12,7 @@ export const mockPeople = {
     registration_address: "a",
     district: "",
     job_offer_existent: false,
-    general_work_permit_required: true
+    general_work_permit_required: true,
+    image_pasport: "",
+    image_registration: ""
   };

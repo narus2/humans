@@ -1,4 +1,4 @@
-import { IsBoolean, IsDate, IsDateString, IsEmail, IsEnum, IsNumber, IsPhoneNumber, IsString } from "class-validator"
+import { IsBase64, IsBoolean, IsDate, IsDateString, IsEmail, IsEnum, IsNumber, IsPhoneNumber, IsString } from "class-validator"
 
 export class CreatePeopleDto {
    @IsString()
@@ -30,4 +30,9 @@ export class CreatePeopleDto {
    job_offer_existent: boolean
    @IsBoolean()
    general_work_permit_required: boolean
+
+   @IsBase64()
+   image_pasport: string
+   @IsBase64()
+   image_registration: string
 }
