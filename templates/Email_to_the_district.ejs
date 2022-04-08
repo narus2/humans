@@ -1,0 +1,30 @@
+<main>
+    Good day,
+    this applicant wants to apply for residence permit:
+    Name*: String
+    Surname*: String
+    Birthdate*: Date
+    Passport type*: National, Biometric, Regular
+    Arrival date*: DD.MM.YYYY
+    Body Height*: xxxcm
+    Eye Color*: red, green, blue, brown, mixed etc.
+    Birth place*: City, region, oblast, country
+    Marital status*: married, divorced etc.
+    Email*: email address with validation
+    Phone: for example +4917679890866, or +380966100289
+    Registration address*: Street Nr., ZIP, City
+    District: Innenstadt, Rodenkirchen, Lindenthal, Ehrenfeld, Nippes, Chorweiler, Porz, Kalk,
+    Mülheim
+    Job offer existent: true / false
+    General work permit required: true / false
+    The copies of the documents are attached below.
+    Best wishes
+    x Passport Copy
+    x Registration document copy
+    
+
+    Доброго дня, <%= locals.username %>!<br />
+    От Вас поступила регистрация на сайте post-life.<br />
+    Для окончания регистрации пройдите пожалуйста по
+    <a href="<%= urlConfirmAddress %><%= id %>">ссылке</a> .
+</main>
