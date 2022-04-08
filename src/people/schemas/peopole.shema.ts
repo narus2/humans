@@ -43,19 +43,19 @@ export class People {
   birth_place: string
   
   @Prop()
-  martial_status: boolean //married, divorced etc.
+  martial_status: boolean 
   
   @Prop()
-  email: string // email adress with validation
+  email: string 
   
   @Prop()
-  phone: string //  for example +4917679890866, or +380966100289
+  phone: string 
   
   @Prop()
-  registration_address: string // Street Nr., ZIP, City
+  registration_address: string 
   
   @Prop()
-  district:string // Innenstadt, Rodenkirchen, Lindenthal, Ehrenfeld, Nippes, Chorweiler, Porz, Kalk,
+  district:string 
   
   @Prop()
   job_offer_existent: boolean

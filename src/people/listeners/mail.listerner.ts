@@ -10,7 +10,6 @@ export class MailCreatedListener {
     console.log('event:');
     console.log(event);
   }
-
     @OnEvent('**')
     handleEverything(payload: any) {
     // handle and process an event

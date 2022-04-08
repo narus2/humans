@@ -19,9 +19,9 @@ export class CreatePeopleDto {
    birth_place: string 
    martial_status: boolean //married, divorced etc.
    @IsEmail()
-   email: string // email adress with validation
+   email: string 
    @IsPhoneNumber()
-   phone: string //  for example +4917679890866, or +380966100289
+   phone: string 
    @IsString()
    registration_address: string // Street Nr., ZIP, City
    @IsString()

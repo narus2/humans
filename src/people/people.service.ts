@@ -10,7 +10,7 @@ import { EventEmitter2 } from '@nestjs/event-emitter';
 @Injectable()
 export class PeopleService {
 
-    constructor(@InjectModel(People.name) private peopleModel: Model<PeopleDocument, EventEmitter2>) { }
+    constructor(@InjectModel(People.name) private peopleModel: Model<PeopleDocument>) { }
 
 
     async getAll(): Promise<People[]> {
@@ -22,11 +22,11 @@ export class PeopleService {
         const createdPeople = new this.peopleModel(peopleDto);
         createdPeople.set("_id", createdPeople.name.concat(createdPeople.surname));
 
-        const em = new EventEmitter2()
-        let r = em.emit('people.created', '')
-        console.log('send emit ', r)
-        r = this.peopleModel.emit('people.created', peopleDto);
-        console.log('send emit2 ', r)
+        // const em = new EventEmitter2()
+        // let r = em.emit('people.created', '')
+        // console.log('send emit ', r)
+        let r = this.peopleModel.emit('people.created', peopleDto);
+        console.log('send emit21 ', r)
 
         return createdPeople.save();
     }

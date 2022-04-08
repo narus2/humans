@@ -8,15 +8,13 @@ export class PeopleController {
     
     constructor(private readonly peopleService: PeopleService) {
     }
-
-
     @Get()
-    get():Promise<People[]>{
+    getAll():Promise<People[]>{
         return  this.peopleService.getAll()
     }
 
     @Post()
-    create(@Body() createProductDto: CreatePeopleDto){
+    create(@Body() createProductDto: CreatePeopleDto):Promise<People>{
         return this.peopleService.create(createProductDto)
     }
 }
