@@ -17,6 +17,7 @@ export class CreatePeopleDto {
    eye_color:string 
    @IsEnum(['city', 'region', 'oblast', 'country'])
    birth_place: string 
+   @IsBoolean()
    martial_status: boolean //married, divorced etc.
    @IsEmail()
    email: string 

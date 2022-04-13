@@ -10,6 +10,7 @@ export const mockPeople = {
     email: "ee@gmail.com",
     phone: "+380974198884",
     registration_address: "a",
+    martial_status: true,
     district: "",
     job_offer_existent: false,
     general_work_permit_required: true,

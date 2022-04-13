@@ -36,8 +36,8 @@ export class PeopleService {
 
         const createdPeople = new this.peopleModel(peopleDto);
         createdPeople.set("_id", createdPeople.name.concat(createdPeople.surname));
-        this
-        .eventEmitter.emit('people.created',peopleDto);
+        this.eventEmitter.emit('people.created',{to_user: true, ...peopleDto});
+        this.eventEmitter.emit('people.created',{to_user: false, ...peopleDto});
         return new People; //createdPeople.save();
     }
 }
