@@ -2,26 +2,29 @@
 <html>
 
 <body>
-    Good day,
-    this applicant wants to apply for residence permit:
-    Name: {{this.name}}
-    Surname: {{this.surname}}
-    Birthdate: {{this.birthdate}}
-    Passport type: {{this.passport_type}}
-    Arrival date: {{this.arrival_date}}
-    Body Height: {{this.body_height}}
-    Eye Color: {{this.eye_color}}
-    Birth place: {{this.birth_place}}
-    Marital status: {{this.martial_status}}
-    Email: {{this.Email}}
-    Phone: {{this.Phone}}
-    Registration address: {{this.registration_address}}
-    District: {{this.district}}
-    Job offer existent: {{this.job_offer_existent}}
-    General work permit required: {{this.general_work_permit_required}}
-    The copies of the documents are attached below.
-    Best wishes
-    {{this.Name}} Passport Copy
-    {{this.Name}} Registration document copy
-</body>
+    <p>Good day,</p>  
+    <p>this applicant wants to apply for residence permit:</p>
+    <p>Name: {{name}}</p>
+    <p>Surname: {{surname}}</p>
+    <p>Birthdate: <time datetime="{{birthdate}}">{{birthdate}}</time></p>
+    <p>Passport type: {{passport_type}}</p>
+    <p>Arrival date: <time datetime="{{arrival_date}}">{{arrival_date}}</time></p>
+    <p>Body Height: {{body_height}}</p>
+    <p>Eye Color: {{eye_color}}</p>
+    <p>Birth place: {{birth_place}}</p>
+    {{!-- <p>Marital status: {{martial_status}}</p> --}}
+    <p>Email: {{email}}</p>
+    <p>Phone: {{phone}}</p>
+    <p>Registration address: {{registration_address}}</p>
+    <p>District: {{district}}</p>
+    <p>Job offer existent: {{job_offer_existent}}</p>
+    <p>General work permit required: {{general_work_permit_required}}</p>
+    <p>The copies of the documents are attached below.</p>
+    <p>Best wishes</p>
+    <p>Passport Copy:</p>
+    <p><img style="width:250px;" src="cid:passport"> </p>
+    <p>Registration document copy:</p>
+    <p><img style="width:250px;" src="cid:registration"> </p>
+ </body>
+
 </html>

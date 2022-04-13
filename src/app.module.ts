@@ -15,10 +15,10 @@ import { HandlebarsAdapter } from '@nestjs-modules/mailer/dist/adapters/handleba
 
 
 @Module({
-  imports: [PeopleModule,
+  imports: [
+    EventEmitterModule.forRoot(),
     ConfigModule.forRoot(),
     MongooseModule.forRootAsync({useClass: MongooseConfigService}),
-    EventEmitterModule.forRoot(),
     
     MailerModule.forRoot({
       transport: {
@@ -40,7 +40,8 @@ import { HandlebarsAdapter } from '@nestjs-modules/mailer/dist/adapters/handleba
           strict: true,
         },
       },
-    })
+    }),
+    PeopleModule,
   ],
   controllers: [AppController],
   providers: [AppService]
